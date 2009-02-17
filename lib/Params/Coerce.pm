@@ -339,7 +339,7 @@ sub _coerce {
 		$have = $want->$hint($have);
 	} elsif ( $type eq '^' ) {
 		# Third party
-		my ($pkg, $function) = $hint =~ m/^(.*)::(.*)$/s;
+		my ($pkg, $function) = $hint =~ m/^(.*)::(.*)\z/s;
 		require $pkg;
 		no strict 'refs';
 		$have = &{"${pkg}::${function}"}($have);
