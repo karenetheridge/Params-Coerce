@@ -52,12 +52,12 @@ A big part of good API design is that we should be able to be flexible in
 the ways that we take parameters.
 
 Params::Coerce attempts to encourage this, by making it easier to take a
-variety of different arguments, while adding negligable additional complexity
+variety of different arguments, while adding negligible additional complexity
 to your code.
 
 =head2 What is Coercion
 
-"Coercion" in computing terms generally referse to "implicit type
+"Coercion" in computing terms generally refers to "implicit type
 conversion". This is where data and object are converted from one type to
 another behind the scenes, and you just just magically get what you need.
 
@@ -75,7 +75,7 @@ At the heart of C<Params::Coerce> is the ability to transform objects from
 one thing to another. This can be done by a variety of different
 mechanisms.
 
-The prefered mechanism for this is by creating a specially named method
+The preferred mechanism for this is by creating a specially named method
 in a class that indicates it can be coerced into another type of object.
 
 As an example, L<HTML::Location> provides an object method that returns an
@@ -117,7 +117,7 @@ In the above example, L<HTML::Location> does B<not> have to load the URI
 class. The need to load the classes for every object we might some day need
 to be coerced to would result in highly excessive resource usage.
 
-Instead, C<Params::Coerce> guarentees that the class you are converting to
+Instead, C<Params::Coerce> guarantees that the class you are converting to
 C<will> be loaded before it calls the __as_Another_Class method. Of course,
 in most situations you will have already loaded it for another purpose in
 either the From or To classes and this won't be an issue.
@@ -153,7 +153,7 @@ For people doing procedural programming, you may also import this function.
   # Import the coerce function
   use Params::Coerce 'coerce';
 
-Please note thatThe C<coerce|Params::Coerce> function is the B<only> function
+Please note that the C<coerce|Params::Coerce> function is the B<only> function
 that can be imported, and that the two argument pragma (or the passing of
 two or more arguments to ->import) means something different entirely.
 
