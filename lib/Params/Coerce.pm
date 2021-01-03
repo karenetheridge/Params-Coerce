@@ -214,7 +214,7 @@ step is supported.
 
 =cut
 
-use 5.005;
+use 5.006;
 use strict;
 use Carp         ();
 use Scalar::Util ();
@@ -224,10 +224,7 @@ use Params::Util '_IDENTIFIER',
 
 # Load Overhead: 52k
 
-use vars qw{$VERSION};
-BEGIN {
-	$VERSION = '0.15';
-}
+our $VERSION = '0.15';
 
 # The hint cache
 my %hints = ();
