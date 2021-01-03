@@ -153,7 +153,7 @@ For people doing procedural programming, you may also import this function.
   # Import the coerce function
   use Params::Coerce 'coerce';
 
-Please note that the C<coerce|Params::Coerce> function is the B<only> function
+Please note that the C<coerce> function is the B<only> function
 that can be imported, and that the two argument pragma (or the passing of
 two or more arguments to ->import) means something different entirely.
 
