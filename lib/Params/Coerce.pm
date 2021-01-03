@@ -1,10 +1,10 @@
 package Params::Coerce;
+# ABSTRACT: Allows your classes to do coercion of parameters
 
 =pod
 
 =head1 NAME
 
-Params::Coerce - Allows your classes to do coercion of parameters
 
 =head1 SYNOPSIS
 
@@ -407,27 +407,5 @@ sub _function_exists {
 
 - Provide a way to coerce to string, int, etc that is compatible with
 L<overload> and other types of things.
-
-=head1 SUPPORT
-
-Bugs should always be submitted via the CPAN bug tracker
-
-L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Param-Coerce>
-
-For other issues, contact the maintainer
-
-=head1 AUTHORS
-
-Adam Kennedy E<lt>adamk@cpan.orgE<gt>
-
-=head1 COPYRIGHT
-
-Copyright 2004 - 2006 Adam Kennedy.
-
-This program is free software; you can redistribute
-it and/or modify it under the same terms as Perl itself.
-
-The full text of the license can be found in the
-LICENSE file included with this module.
 
 =cut

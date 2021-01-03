@@ -1,0 +1,6 @@
+/.ackrc
+/.build/
+!/.gitignore
+/.latest
+/Params-Coerce-*/
+/Params-Coerce-*.tar.gz

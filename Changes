@@ -1,5 +1,8 @@
 Revision history for Perl extension Param::Coerce
 
+{{$NEXT}}
+        - distribution tooling updates
+
 0.14    2006-10-10
         - Moving from old CVS to new SVN repository
         - Cleaning up tests to remove the File::Spec dependency
