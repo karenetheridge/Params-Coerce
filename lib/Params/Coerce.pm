@@ -224,7 +224,7 @@ use Params::Util '_IDENTIFIER',
 
 # Load Overhead: 52k
 
-our $VERSION = '0.15';
+our $VERSION = '0.16';
 
 # The hint cache
 my %hints = ();
