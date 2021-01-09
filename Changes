@@ -1,6 +1,6 @@
 Revision history for Perl extension Param::Coerce
 
-{{$NEXT}}
+0.15      2021-01-09 00:41:40Z
         - distribution tooling updates
 
 0.14    2006-10-10
