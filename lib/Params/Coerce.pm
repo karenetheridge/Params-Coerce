@@ -10,11 +10,11 @@ package Params::Coerce;
 
   # Coerce a object of class Foo to a Bar
   my $bar = Params::Coerce::coerce('Bar', $Foo)
-  
+
   # Create a coercion param function
   use Params::Coerce '_Bar' => 'Bar';
   my $bar = _Bar($Foo);
-  
+
   # Usage when Bar has a 'from' method
   my $bar = Bar->from($Foo);
 
@@ -22,26 +22,26 @@ Real world example using L<HTML::Location>.
 
   # My class needs a URI
   package Web::Spider;
-  
+
   use URI;
   use Params::Coerce 'coerce';
-  
+
   sub new {
       my $class = shift;
-      
+
       # Where do we start spidering
       my $start = coerce('URI', shift) or die "Wasn't passed a URI";
-      
+
       bless { root => $start }, $class;
   }
-  
+
   #############################################
   # Now we can do the following
-  
+
   # Pass a URI as normal
   my $URI     = URI->new('http://ali.as/');
   my $Spider1 = Web::Spider->new( $URI );
-  
+
   # We can also pass anything that can be coerced into being a URI
   my $Website = HTML::Location->new( '/home/adam/public_html', 'http://ali.as' );
   my $Spider2 = Web::Spider->new( $Website );
@@ -82,7 +82,7 @@ As an example, L<HTML::Location> provides an object method that returns an
 equivalent L<URI> object.
 
   # In the package HTML::Location
-  
+
   # Coerce to a URI
   sub __as_URI {
   	my $self = shift;
@@ -97,7 +97,7 @@ having to define a method in L<HTML::Location>, you may instead define
 one in L<URI>. The following code has an identical effect.
 
   # In the package URI
-  
+
   # Coerce from a HTML::Location
   sub __from_HTML_Location {
   	my $Location = shift;
@@ -135,16 +135,16 @@ of the class you wish to coerce B<to>, followed by the parameter to which you
 wish to apply the coercion.
 
   package My::Class;
-  
+
   use URI ();
   use Params::Coerce '_URI' => 'URI';
-  
+
   sub new {
   	my $class = shift;
-  	
+
   	# Take a URI argument
   	my $URI = Params::Coerce::coerce('URI', shift) or return;
-  	
+
   	...
   }
 
@@ -164,10 +164,10 @@ Object-Oriented programming, is to create method specifically for taking
 parameters in a coercing manner.
 
   package My::Class;
-  
+
   use URI ();
   use Params::Coerce '_URI' => 'URI';
-  
+
   sub new {
   	my $class = shift;
 
@@ -183,11 +183,11 @@ From version C<0.11> of C<Params::Coerce>, an additional mechanism is
 available with the importable C<from> constructor.
 
   package My::Class;
-  
+
   use Params::Coerce 'from';
-  
+
   package Other::Class;
-  
+
   sub method {
   	my $self = shift;
   	my $My   = My::Class->from(shift) or die "Bad param";
@@ -197,7 +197,7 @@ available with the importable C<from> constructor.
 This is mainly a convenience. The above is equivalent to
 
   package My::Class;
-  
+
   use Params::Coerce 'from' => 'Params::Coerce';
 
 In future versions, this C<-E<gt>from> syntax may also tweak the resolution
